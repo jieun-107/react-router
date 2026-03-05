@@ -5,14 +5,14 @@ import DashboardHome from "../pages/dashboard/DashboardHome";
 import Dashboard from "../pages/dashboard/Dashboard";
 import DashboardSetting from "../pages/dashboard/DashboardSetting";
 import Default from "../pages/layouts/Default";
-import DashboardLayout from "../pages/layouts/DashboardLayout";
 
 const router = createBrowserRouter([
   {
+    // 공통 레이아웃을 제공하는 최상위 라우트
     Component: Default,
     children: [
       {
-        path: "/",
+        path: "/", // 루트 경로
         Component: Home,
       }, // 라우트 객체
       {
@@ -20,10 +20,11 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        Component: DashboardLayout,
+        path: "/group", // 공통 경로 세그먼트를 추가할 때 라우트 프리픽스를 사용
+        // Component: DashboardLayout, // 필요 시 공통 레이아웃을 지정
         children: [
           {
-            path: "/dashboard",
+            path: "dashboard",
             Component: Dashboard,
             children: [
               {
