@@ -18,15 +18,15 @@ const router = createBrowserRouter([
         Component: Home,
       }, // 라우트 객체
       {
-        path: "/about",
+        path: "/:locale?/about",
         element: <About />,
       },
       {
-        path: "/post/:id", // 동적 세그먼트 (식별자 중복 불가)
+        path: "/post?/:id", // 옵셔널 세그먼트 (? 생략가능)
         Component: Post,
       },
       {
-        path: "/post/:id/detail/:detail",
+        path: "/post/:id/detail/:detail", // 동적 세그먼트 (식별자 중복 불가)
         Component: PostDetail,
       },
       {
