@@ -5,6 +5,8 @@ import DashboardHome from "../pages/dashboard/DashboardHome";
 import Dashboard from "../pages/dashboard/Dashboard";
 import DashboardSetting from "../pages/dashboard/DashboardSetting";
 import Default from "../pages/layouts/Default";
+import Post from "../pages/post/post";
+import PostDetail from "../pages/post/PostDetail";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/post/:id", // 동적 세그먼트 (식별자 중복 불가)
+        Component: Post,
+      },
+      {
+        path: "/post/:id/detail/:detail",
+        Component: PostDetail,
       },
       {
         path: "/group", // 공통 경로 세그먼트를 추가할 때 라우트 프리픽스를 사용
